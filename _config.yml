@@ -1,72 +1,222 @@
-# Site
-name: "Mediumish"
-title: "Mediumish"
-description: "Jekyll template, Medium styled, free for bloggers."
-logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
-baseurl: baseurl: "/THE_ME_2"
-google_analytics: 'UA-46278016-1'
-disqus: 'demowebsite'
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
-include: ["_pages"]
-permalink: /:title/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurelia Heights | Luxury 2 & 3 BHK Apartments</title>
+  <link href="https://googleapis.com" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0F172A;
+      --navy-light: #1E293B;
+      --gold: #D4AF37;
+      --gold-hover: #B8941F;
+      --ivory: #FAF9F6;
+      --text-dark: #1E293B;
+      --text-muted: #64748B;
+      --white: #FFFFFF;
+    }
 
-# Authors
-authors:
-  sal:
-    name: Sal
-    display_name: Sal
-    gravatar: e56154546cf4be74e393c62d1ae9f9d4
-    email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net
-    twitter: https://twitter.com/wowthemesnet
-    description: "Author of Mediumish, a Bootstrap Medium styled template available for WordPress, HTML, Ghost and Jekyll. You are currently previewing Jekyll template demo."
-  john:
-    name: John
-    display_name: John    
-    avatar: 'assets/images/avatar.png'
-    gravatar: b1cc14991db7a456fcd761680bbc8f81
-    email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net
-    twitter: https://twitter.com/wowthemesnet
-    description: "This is the author box. Write a short description of the author here. You are currently previewing Mediumish demo, a Jekyll template compatible with Github pages."
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--ivory); color: var(--text-dark); line-height: 1.6; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-archives
-    
-# Archives
-jekyll-archives:
-  enabled:
-    - categories
-  layout: archive
-  permalinks:
-    category: '/category/:name/'
-    
-# Pagination 
-paginate: 6
-paginate_path: /page:num/
-    
-# Other
-markdown: kramdown
+    /* Navbar */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 8%; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .logo { color: var(--gold); font-size: 1.5rem; font-weight: 700; letter-spacing: 1px; }
+    .nav-links a { color: var(--white); text-decoration: none; margin: 0 16px; font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--gold); }
 
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    block:
-      line_numbers: true
+    /* Buttons */
+    .btn-gold {
+      background: var(--gold); color: var(--navy); border: none;
+      padding: 13px 26px; font-size: 0.95rem; font-weight: 700;
+      border-radius: 6px; cursor: pointer; transition: 0.3s;
+    }
+    .btn-gold:hover { background: var(--gold-hover); transform: translateY(-2px); }
 
-# Adsense (change to "enabled" to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
-adsense: "disabled"
-adsense-data-ad-client: "ca-pub-3412143450191416"
-adsense-data-ad-slot: "1363087678"
+    /* 1. HERO SECTION WITH LOOP VIDEO */
+    .hero {
+      position: relative; height: 100vh; display: flex; align-items: center;
+      justify-content: center; text-align: center; color: var(--white); overflow: hidden;
+    }
+    .hero video {
+      position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
+      transform: translate(-50%, -50%); object-fit: cover; z-index: -2;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(15,23,42,0.72) 0%, rgba(15,23,42,0.85) 100%);
+      z-index: -1;
+    }
+    .hero-content { max-width: 780px; padding: 0 20px; margin-top: 40px; }
+    .badge {
+      display: inline-block; padding: 6px 16px; border: 1px solid var(--gold);
+      color: var(--gold); border-radius: 50px; font-size: 0.85rem; margin-bottom: 18px;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .hero h1 { font-size: 3.3rem; line-height: 1.2; margin-bottom: 18px; }
+    .hero p { font-size: 1.15rem; color: #E2E8F0; margin-bottom: 30px; }
 
-# Lazy Images ("enabled" or "disabled")
-lazyimages: "disabled"
+    /* 2. SOCIAL PROOF */
+    .social-proof {
+      background: var(--navy); color: var(--white); padding: 50px 8%;
+      border-bottom: 3px solid var(--gold);
+    }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px; text-align: center; margin-bottom: 40px;
+    }
+    .stat-box h3 { color: var(--gold); font-size: 2.3rem; }
+    .stat-box p { color: #CBD5E1; font-size: 0.95rem; }
+    .testimonial {
+      max-width: 720px; margin: 0 auto; text-align: center;
+      background: var(--navy-light); padding: 28px; border-radius: 10px;
+      border-left: 4px solid var(--gold);
+    }
+    .testimonial p { font-style: italic; color: #F1F5F9; margin-bottom: 10px; }
+    .testimonial span { color: var(--gold); font-weight: 600; font-size: 0.9rem; }
 
-exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
+    /* Section General */
+    section.pad { padding: 80px 8%; }
+    .sec-title { text-align: center; margin-bottom: 50px; }
+    .sec-title span { color: var(--gold-hover); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1.5px; }
+    .sec-title h2 { font-size: 2.4rem; color: var(--navy); margin-top: 8px; }
+
+    /* 3. KEY HIGHLIGHTS */
+    .highlights-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;
+    }
+    .card {
+      background: var(--white); padding: 30px; border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06); border-top: 4px solid var(--gold);
+    }
+    .card h3 { font-size: 1.35rem; margin-bottom: 10px; color: var(--navy); }
+    .card p { color: var(--text-muted); font-size: 0.95rem; }
+
+    /* 4. BENEFITS & VIDEO WALKTHROUGH */
+    .benefits-wrap {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px; align-items: center; background: var(--white);
+      padding: 45px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .benefit-list { list-style: none; }
+    .benefit-list li {
+      padding: 12px 0; border-bottom: 1px solid #E2E8F0;
+      font-weight: 500; display: flex; align-items: center; gap: 12px;
+    }
+    .benefit-list li::before { content: "✦"; color: var(--gold-hover); font-size: 1.2rem; }
+    .loop-box video { width: 100%; border-radius: 12px; box-shadow: 0 12px 25px rgba(15,23,42,0.18); }
+
+    /* 5. LOCATION */
+    .location-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; align-items: center;
+    }
+    .loc-item {
+      display: flex; justify-content: space-between; padding: 14px 18px;
+      background: var(--white); margin-bottom: 12px; border-radius: 8px;
+      border-left: 3px solid var(--navy); font-weight: 500;
+    }
+    .loc-item span { color: var(--gold-hover); font-weight: 700; }
+    .map-box iframe { width: 100%; height: 320px; border: 0; border-radius: 12px; }
+
+    /* 6. FINAL CTA */
+    .final-cta {
+      background: linear-gradient(135deg, var(--navy) 0%, #1E293B 100%);
+      color: var(--white); text-align: center; padding: 80px 8%;
+    }
+    .final-cta h2 { font-size: 2.6rem; margin-bottom: 14px; color: var(--gold); }
+    .final-cta p { max-width: 600px; margin: 0 auto 30px; color: #CBD5E1; font-size: 1.1rem; }
+
+    /* POP-UP MODAL FORM */
+    .modal-backdrop {
+      display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(5px); z-index: 999; align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-backdrop.active { display: flex; }
+    .modal-box {
+      background: var(--white); width: 100%; max-width: 430px; padding: 35px;
+      border-radius: 14px; position: relative; border-top: 5px solid var(--gold);
+      animation: popIn 0.25s ease-out;
+    }
+    @keyframes popIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .close-btn {
+      position: absolute; top: 15px; right: 18px; font-size: 1.5rem;
+      background: none; border: none; cursor: pointer; color: var(--text-muted);
+    }
+    .modal-box h3 { font-size: 1.7rem; color: var(--navy); margin-bottom: 6px; }
+    .modal-box p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; }
+    .form-group { margin-bottom: 15px; text-align: left; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; color: var(--navy); }
+    .form-group input {
+      width: 100%; padding: 12px; border: 1px solid #CBD5E1; border-radius: 6px;
+      font-size: 0.95rem; font-family: inherit;
+    }
+    .form-group input:focus { outline: none; border-color: var(--gold); }
+    .success-msg { display: none; text-align: center; padding: 20px 0; color: #059669; font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">AURELIA HEIGHTS</div>
+    <div class="nav-links">
+      <a href="#highlights">Highlights</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#location">Location</a>
+    </div>
+    <button class="btn-gold" onclick="openModal('Brochure Download')">Download Brochure</button>
+  </nav>
+
+  <!-- 1. HERO SECTION (With Autoplay Loop Video) -->
+  <header class="hero">
+    <video autoplay muted loop playsinline poster="https://pexels.com">
+      <source src="https://pexels.com" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="badge">RERA Approved • Ready to Move</div>
+      <h1>Elevate Your Living in Luxury 2 & 3 BHK Residences</h1>
+      <p>Experience spacious architecture, 70% open green landscapes, and resort-style amenities in the heart of the city. Starting at ₹85 Lakhs*.</p>
+      <button class="btn-gold" onclick="openModal('Book Free Site Visit')">Book Free Site Visit</button>
+    </div>
+  </header>
+
+  <!-- 2. SOCIAL PROOF -->
+  <section class="social-proof">
+    <div class="stats-grid">
+      <div class="stat-box"><h3>450+</h3><p>Happy Families Residing</p></div>
+      <div class="stat-box"><h3>4.9 ★</h3><p>Google Homeowner Rating</p></div>
+      <div class="stat-box"><h3>15+ Yrs</h3><p>Trusted Builder Legacy</p></div>
+      <div class="stat-box"><h3>100%</h3><p>On-Time Project Delivery</p></div>
+    </div>
+    <div class="testimonial">
+      <p>"Moving into Aurelia Heights was the best decision for our family. The ventilation, security, and clubhouse facilities feel like living in a 5-star resort every day."</p>
+      <span>— Karthik & Sneha Reddy, Block-B Residents</span>
+    </div>
+  </section>
+
+  <!-- 3. KEY HIGHLIGHTS -->
+  <section id="highlights" class="pad">
+    <div class="sec-title">
+      <span>Project Overview</span>
+      <h2>Key Architectural Highlights</h2>
+    </div>
+    <div class="highlights-grid">
+      <div class="card">
+        <h3>100% Vaastu Compliant</h3>
+        <p>Thoughtfully designed East & North facing apartments with zero dead space and abundant natural sunlight.</p>
+      </div>
+      <div class="card">
+        <h3>25,000 Sq.Ft Clubhouse</h3>
